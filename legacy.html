@@ -1,0 +1,29 @@
+<!--------1. Web form image not showing on IIS------>
+Question
+I have placed an image on the master page.
+
+I see the image at design time.
+
+But I don't see the image at run time.
+
+What can be the problem?
+
+I have tried to place the image on an image box. But it didn't work either.
+
+
+
+
+Solution: 
+
+I think your image files are not accessible on runtime.
+
+Just paste this code in your web.config file and the images will be displayed.
+
+<?xml version="1.0" encoding="utf-8"?>
+<configuration xmlns="http://schemas.microsoft.com/.NetConfiguration/v2.0">
+<system.web>
+<authorization>
+<allow users="*" />
+</authorization>
+</system.web>
+</configuration>
